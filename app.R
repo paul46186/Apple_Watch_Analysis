@@ -117,13 +117,13 @@ server <- function(input, output) {
   output$Kcal <- renderPlot({
     ggplot(as.data.frame(data1()), aes(x = Date, y = Active.Energy)) +
       geom_line(size=1)+
-      geom_smooth(method=lm,,size=0.7)+
+      geom_smooth(method=lm,size=0.7)+
       labs(x = "Date", y= "Active Energy (Kcal)")+theme(legend.position = 'bottom')
   })
   
   output$Excerise <- renderPlot({
     ggplot(as.data.frame(data1()), aes(x = Date, y = Exercise.Time)) +
-      geom_col()+
+      geom_col(fill='#004C99')+
       labs(x = "Date", y= "Exercise Time (min)")
     
   })
@@ -211,7 +211,7 @@ server <- function(input, output) {
   
   output$SleepIdle <- renderPlot({
     ggplot(as.data.frame(data2()), aes(x = Date, y = Sleep.Idel)) +
-      geom_col()+
+      geom_col(fill='#006666')+
       labs(x = "Date", y= "Time to fall asleep")
     
   })
